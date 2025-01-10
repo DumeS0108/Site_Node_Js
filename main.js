@@ -30,7 +30,7 @@ fetch('http://192.168.65.219:8080/Route1', {
             result.forEach(medecin => {
                 const li = document.createElement('li');
                 // Afficher prénom et nom du médecin
-                li.textContent = `${medecin.nom} ${medecin.prenom}`; // Concaténer nom et prénom
+                li.textContent = `ID : ${medecin.id} Nom : ${medecin.nom} || Prenom : ${medecin.prenom}`; // Concaténer nom et prénom
                 ul.appendChild(li);
             });
             ladivMagique.appendChild(ul);
@@ -44,3 +44,23 @@ fetch('http://192.168.65.219:8080/Route1', {
         // Afficher un message d'erreur
         ladivMagique.innerHTML = "<p>Une erreur est survenue lors du chargement des médecins.</p>";
     });
+
+
+//Button "GO"
+var monButton = document.getElementById("Lebuton");
+function envoyerUntruc() {
+    let valeurDeMonChamp = document.getElementById("leNom");
+    fetch("http://192.168.65.219:8080/addMedecin",
+        {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify({ "nom": valeurDeMonChamp })
+        })
+        .then(function (res) { console.log(res) })
+        .catch(function (res) { console.log(res) })
+}
+
+monButton.addEventListener("click", envoyerUnTruc);
