@@ -1,0 +1,231 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0078d7;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffdd57;
+}
+
+/* Section Accueil */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(to right, #0078d7, #005bb5);
+    color: #fff;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffdd57; /* Couleur contrastante jaune */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ajout d'une ombre pour plus de lisibilité */
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #ffffff; /* Texte blanc pour contraster avec le fond */
+}
+
+
+.hero-text .cta-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ffdd57; /* Même couleur que le titre pour une cohérence visuelle */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Ombre subtile */
+}
+
+.home-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.home-buttons .btn {
+    text-decoration: none;
+    background-color: #ffdd57;
+    color: #0078d7;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.home-buttons .btn:hover {
+    background-color: #0078d7;
+    color: #fff;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Section Highlights */
+.highlights-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.highlights {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.highlight {
+    max-width: 300px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.highlight img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.highlight h3 {
+    color: #0078d7;
+}
+
+/* Section Témoignages */
+.testimonials-section {
+    padding: 2rem 1rem;
+    background: #0078d7;
+    color: #fff;
+    text-align: center;
+}
+
+.testimonials {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    max-width: 300px;
+    font-style: italic;
+    border-left: 4px solid #ffdd57;
+    padding-left: 1rem;
+}
+
+/* Section Contact */
+#contact {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 4px solid #007bff;
+  }
+  
+  .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  #contact h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  #contact p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info {
+    margin-top: 20px;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .contact-info strong {
+    color: #007bff;
+  }
+  
+  .contact-footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+/* Images responsives : s'applique à toutes les images ayant la classe .responsive-img */
+.responsive-img {
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    max-width: 300px; /* Limite la largeur maximale */
+    height: 200px; /* Hauteur fixe pour uniformiser */
+    object-fit: cover; /* Maintient l'aspect ratio tout en remplissant le conteneur */
+    border-radius: 10px; /* Ajoute des coins arrondis pour un look moderne */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre pour améliorer le visuel */
+    margin: 0 auto; /* Centre l'image dans son conteneur */
+}
+
+
