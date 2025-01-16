@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* Barre de navigation */
@@ -39,11 +40,53 @@ body {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease; /* Effet de survol */
 }
 
 .nav-links a:hover {
     color: #ffdd57;
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+/* Menu hamburger pour responsive */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    margin: 6px 0;
+    background-color: white;
+}
+
+/* Loader (affichage au chargement de la page) */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader span {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #fff;
+    border-top: 5px solid #0078d7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Section Accueil */
@@ -74,6 +117,11 @@ body {
     margin-bottom: 1rem;
     color: #ffdd57; /* Couleur contrastante jaune */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ajout d'une ombre pour plus de lisibilité */
+    transition: transform 0.3s ease;
+}
+
+.hero-text h1:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 .hero-text p {
@@ -81,7 +129,6 @@ body {
     margin-bottom: 1rem;
     color: #ffffff; /* Texte blanc pour contraster avec le fond */
 }
-
 
 .hero-text .cta-text {
     font-weight: bold;
@@ -103,17 +150,23 @@ body {
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .home-buttons .btn:hover {
     background-color: #0078d7;
     color: #fff;
+    transform: scale(1.05); /* Effet de zoom sur les boutons */
 }
 
 .hero-image img {
     max-width: 100%;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05); /* Zoom sur l'image */
 }
 
 /* Section Highlights */
@@ -134,12 +187,18 @@ body {
     max-width: 300px;
     text-align: center;
     padding: 1rem;
+    transition: transform 0.3s ease;
 }
 
 .highlight img {
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.highlight img:hover {
+    transform: scale(1.1); /* Zoom sur les images des highlights */
 }
 
 .highlight h3 {
@@ -174,58 +233,80 @@ body {
     padding: 50px 20px;
     text-align: center;
     border-top: 4px solid #007bff;
-  }
-  
-  .contact-container {
+}
+
+.contact-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-  }
-  
-  #contact h2 {
+}
+
+#contact h2 {
     font-size: 2rem;
     color: #007bff;
     margin-bottom: 15px;
-  }
-  
-  #contact p {
+}
+
+#contact p {
     font-size: 1.2rem;
     color: #333;
     margin-bottom: 15px;
-  }
-  
-  .contact-info {
+}
+
+.contact-info {
     margin-top: 20px;
-  }
-  
-  .contact-info p {
+}
+
+.contact-info p {
     font-size: 1.1rem;
     color: #555;
     margin: 8px 0;
-  }
-  
-  .contact-info strong {
+}
+
+.contact-info strong {
     color: #007bff;
-  }
-  
-  .contact-footer {
+}
+
+.contact-footer {
     margin-top: 30px;
     font-size: 0.9rem;
     color: #888;
-  }
-  
-/* Images responsives : s'applique à toutes les images ayant la classe .responsive-img */
-.responsive-img {
-    width: 100%; /* L'image prend toute la largeur de son conteneur */
-    max-width: 300px; /* Limite la largeur maximale */
-    height: 200px; /* Hauteur fixe pour uniformiser */
-    object-fit: cover; /* Maintient l'aspect ratio tout en remplissant le conteneur */
-    border-radius: 10px; /* Ajoute des coins arrondis pour un look moderne */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre pour améliorer le visuel */
-    margin: 0 auto; /* Centre l'image dans son conteneur */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 
+/* Focus sur les champs de formulaire */
+input:focus, textarea:focus {
+    border: 2px solid #0078d7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 120, 215, 0.5);
+}
+
+/* Parallax effect */
+.parallax {
+    background-image: url('path-to-image.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
